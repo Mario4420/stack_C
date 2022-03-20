@@ -24,14 +24,12 @@ void add_stack(Stack *stack, int item){
 
 int pop_stack(Stack *stack){
     if(stack->last_element == -1){
-
+        return NULL;
     }
-    else{
-        stack->curr_size--;
-        stack->arr = realloc(stack->arr, stack->curr_size * sizeof(int));
-        stack->last_element--;
-        return stack->arr[stack->last_element+1];
-    }
+    stack->curr_size--;
+    stack->arr = realloc(stack->arr, stack->curr_size * sizeof(int));
+    stack->last_element--;
+    return stack->arr[stack->last_element+1];
 }
 
 
