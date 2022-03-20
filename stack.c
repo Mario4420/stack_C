@@ -8,7 +8,6 @@ typedef struct{
     int last_element;
 } Stack; 
 
-
 void init_stack(Stack *stack){
     stack->last_element = -1;
     stack->curr_size = 0;
@@ -23,7 +22,7 @@ void add_stack(Stack *stack, int item){
 }
 
 
-void pop_stack(Stack *stack){
+int pop_stack(Stack *stack){
     if(stack->last_element == -1){
 
     }
@@ -31,6 +30,7 @@ void pop_stack(Stack *stack){
         stack->curr_size--;
         stack->arr = realloc(stack->arr, stack->curr_size * sizeof(int));
         stack->last_element--;
+        return stack->arr[stack->last_element+1];
     }
 }
 
