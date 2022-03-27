@@ -28,5 +28,8 @@ int main(){
         pop_stack(&stack);
     }
 
+    printf("\n");
+    print_stack(&stack);
+
     return EXIT_SUCCESS;
 }
